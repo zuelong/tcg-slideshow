@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const ImageSizer = require('./services/image_sizer')
 
 const app = express();
 
-const FOLDER_PATH = './client/public/flyers';
+const FOLDER_PATH = __dirname + '\\client\\public\\flyers\\';
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -13,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('/api/flyers', (req,res) => {
     let files = [];
     fs.readdirSync(FOLDER_PATH).forEach(file => {
-        files.push(file)
+        files.push(ImageSizer.getSize(FOLDER_PATH + file))
     });
 
     res.json(files)

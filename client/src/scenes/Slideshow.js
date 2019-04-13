@@ -6,10 +6,11 @@ class Slideshow extends Component {
 
   _render_file_names() {
     let images = []
-    for (let url of this.props.imageList) {
+    for (let image of this.props.imageList) {
       images.push(
         <Flyer 
-            imageURL={`http://localhost:5000/flyers/${url}`}
+            url={`http://localhost:5000/flyers/${image.image}`}
+            image={image}
         />
       )
     }
