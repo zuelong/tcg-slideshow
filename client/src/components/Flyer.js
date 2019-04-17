@@ -19,7 +19,7 @@ class Flyer extends Component {
   }
 
   _formatImage() {
-    const ratio = window.innerHeight / this.state.image.height
+    const ratio = window.innerWidth / this.state.image.width
     const height = this.state.image.height * ratio
     const width = this.state.image.width * ratio
     const image = {...this.state.image, height, width}
@@ -27,15 +27,16 @@ class Flyer extends Component {
   }
 
   _calcMargin() {
-    return 0.5 * (window.innerWidth - this.state.image.width)
+    return 0.5 * (window.innerHeight - this.state.image.height)
   }
-
+ 
   render() {
     const styles = {
       flyer: {
         height: `${this.state.image.height}px`,
         width: `${this.state.image.width}px`,
-        marginLeft: `${this._calcMargin()}px`
+        marginTop: `${this._calcMargin()}px`,
+        overflow: "hidden",
       }
     }
 

@@ -17,12 +17,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style={{backgroundColor: 'black'}}>
+      <div className="App" style={styles.App}>
         <Slideshow 
           imageList={this.state.imageList}
         />
       </div>
     );
+  }
+}
+
+const styles = {
+  App: {
+    backgroundColor: 'black',
+    height: '100vh',
+    width: '100vw',
+    overflow: 'hidden'
   }
 }
 
