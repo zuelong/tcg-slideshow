@@ -4,7 +4,7 @@ import { Fade } from 'react-slideshow-image';
 
 class Slideshow extends Component {
 
-  _render_file_names() {
+  _render_images() {
     let images = []
     for (let image of this.props.imageList) {
       images.push(
@@ -21,7 +21,7 @@ class Slideshow extends Component {
   render() {
     return (
       <Fade {...fadeProperties}>
-        {this._render_file_names()}
+        {this._render_images()}
       </Fade>
     );
   }
