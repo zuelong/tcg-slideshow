@@ -28,7 +28,7 @@ class Slideshow extends Component {
 }
 
 const fadeProperties = {
-  duration: 5000,
+  duration: 10000,
   transitionDuration: 500,
   infinite: true,
   indicators: true
